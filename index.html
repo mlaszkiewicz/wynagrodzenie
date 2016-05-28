@@ -1,0 +1,40 @@
+<title>Kalkulator Wpłat</title>
+<style>
+body {margin: 0px;}
+strona {padding:20px;}
+</style>
+<script>
+
+
+function klikniecie(){
+kwota = document.getElementById("pole").value;
+kwota1 = Math.round(kwota-(Math.round((Math.round(((kwota-((kwota*0.0976)+(kwota*0.015)))-((kwota-((kwota*0.0976)+(kwota*0.015)))*0.2))*0.18,0))-((kwota-((kwota*0.0976)+(kwota*0.015)))*0.0775),0))-((kwota-((kwota*0.0976)+(kwota*0.015)))*0.09)-((kwota*0.0976)+(kwota*0.015)),2);
+
+zleceniestudent = kwota-Math.round((kwota-(kwota*0.2))*0.18,0);
+zlecenie1800plus = kwota-(Math.round((Math.round((kwota-(kwota*0.2))*0.18,0))-(kwota*0.0775),0))-(kwota*0.09);
+zlecenieryczaltskladki = Math.round(kwota-(kwota*0.0976)-(kwota*0.015)-(Math.round(kwota*0.18,0))-((kwota-(kwota*0.0976)-(kwota*0.015))*0.09),2);
+dzielo20proc = kwota-(Math.round((kwota-(kwota*0.2))*0.18,0));
+dzielo50proc = kwota-(Math.round((kwota-(kwota*0.5))*0.18,0));
+dzieloryczalt = kwota-(Math.round(kwota*0.18,0));
+
+
+document.getElementById("wynik").innerHTML=("Zlecenie "+kwota1+" pln"+"<br>"+"Zlecenie student "+zleceniestudent+" pln"+"<br>"+"Zlecenie 1800+ "+zlecenie1800plus+" pln"+"<br>"+"Zlecenie ryczałt < 200 "+zlecenieryczaltskladki+" pln"+"<br>"+"Dzieło 20% "+dzielo20proc+" pln"+"<br>"+"Dzieło 50% "+dzielo50proc+" pln"+"<br>"+"Dzieło ryczałt "+dzieloryczalt+" pln");
+
+
+}
+
+</script>
+<div id=strona>
+<img src=calculator2.png width=150px style="padding:10px">
+<br>
+<div style="text-align:center;padding:40px; color:#fff;   background: #24ECEA;
+    background: -webkit-linear-gradient(top left, #50a3a2 0%, #5393E3 100%);
+    background: linear-gradient(to bottom right, #50a3a2 0%, #53C2E3 100%);">
+<br><br> Podaj kwotę brutto<br>
+<input id=pole><br><br><input type=submit onclick="klikniecie()" value="przelicz" style="background: #0099DD;border: 0px;padding: 10px;color: #fff;">
+<div id=wynik style="border: 0px solid;width:50%;margin:0 auto;padding:10px"></div>
+</div></div>
+
+<div style="color: #000;position: fixed;bottom: 0;right: 0;width: 250px;padding: 10px 1px 10px 1px;margin: 5px;text-align: center;font-size: 12px;"><small>Aplikacja demo zrealizowana przy współpracy</small><br>
+<img src="ts.png" style="width:100px">   
+<img src="deb.png" style="width:100px"> </div>
